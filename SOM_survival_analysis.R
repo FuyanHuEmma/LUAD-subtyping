@@ -5,7 +5,7 @@ setwd('D:/English_paper/')
 
 Path_input<-'D:/English_paper/'
 
-
+library(kohonen)
 
 LUAD_RSEM_best_tumor<-read.table(paste(Path_input,"LUAD_RSEM_best_tumor.txt",sep=''),sep='\t',check.names=FALSE,row.names=1,header=1,fill=TRUE,quote = "")
 LUAD_RSEM_best_tumor<-as.matrix(LUAD_RSEM_best_tumor)
@@ -94,7 +94,7 @@ for(i in 1:570){
 #class_target
 write.table(class_target,file = "class_target.txt")
 
-lungsubtype<-class_target[1:512] #·Î°©Ñù±¾
+lungsubtype<-class_target[1:512] #Â·ÃÂ°Â©Ã‘Ã¹Â±Â¾
 lungsubtype<-as.matrix(lungsubtype)
 rownames(lungsubtype)<-colnames(LUAD_RSEM_best_tumor)
 
